@@ -1,0 +1,16 @@
+open NAT .
+    -- signature
+    op 2*_ : Nat -> Nat .
+    op _! : Nat -> Nat .
+    -- variables
+    var N : Nat .
+    var NzX : NzNat .
+    -- equations
+    eq 2* N = N + N .
+    eq 0 ! = 1 .
+    eq NzX ! = NzX * ((p NzX) !) .
+
+    -- test
+    red (2* 3) + (2 !) == 8 .
+    red 2* (3 !) == 12 .
+close

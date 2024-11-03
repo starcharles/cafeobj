@@ -1,0 +1,21 @@
+open NAT .
+    -- signature
+    op 2*_ : Nat -> Nat { prec: 1 l-assoc } .
+    op _! : Nat -> Nat { prec: 0 r-assoc } .
+    -- variables
+    var N : Nat .
+    var NzX : NzNat .
+    -- equations
+    eq 2* N = N + N .
+    eq 0 ! = 1 .
+    eq NzX ! = NzX * ((p NzX) !) .
+
+    -- test
+    red (2* 3 !) == 12 . -- (2* (3 !))
+    red (2* 2* 3 !) == 24 . -- (2* (2* (3 !)))
+    red (2* 3 ! + 2* 2* 3 !) == 36 . -- ((2* (3 !)) + (2* (2* (3 !))))
+    parse 2* 2* 2* 3 ! .
+    -- set trace whole on .
+    red 2* 2* 2* 3 ! .
+    -- set trace whole off .
+close
