@@ -1,7 +1,7 @@
 # Functional Programming with CafeOBJ
 
 "モデルの記述と検証のためのプログラミング入門: CafeOBJ による仕様検証" 二木 厚吉
-![CafeOBJ](./img/fp.png)
+![CafeOBJ](./images/fp.jpg)
 
 - [ ] 1 章
 - [ ] 2 章
